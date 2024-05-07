@@ -26,3 +26,23 @@
     border-radius:25px;
     margin:5px;
 }
+#body
+{
+    background-color: rgba(27, 56, 108, 0.51);
+}
+#title{
+    text-align:center;
+}
+#calc
+{
+    border-radius:25px;
+    background-color: #203979;
+}
+.grid-item:hover
+{
+    background-color: #5c6f7e;
+}
+#dropdownMenuButton1
+{
+    background-color:#203979;
+}

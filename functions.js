@@ -1,5 +1,6 @@
-let displayString = ""
-let evalString = ""
+let displayString = "";
+let evalString = "";
+let history = [];
 function click1()
 {
     displayString+="1";
@@ -56,32 +57,38 @@ function click9()
 }
 function clickPlus()
 {
-    displayString+="+";
+    displayString+=" + ";
     evalString+="+";
     document.getElementById("display").innerHTML = displayString;
 }
 function clickMinus()
 {
-    displayString+="-";
+    displayString+=" - ";
     evalString+="-";
+    document.getElementById("display").innerHTML = displayString;
+}
+function click0()
+{
+    displayString+="0";
+    evalString+="0";
     document.getElementById("display").innerHTML = displayString;
 }
 function clickSlash()
 {
-    displayString+="/";
+    displayString+=" / ";
     evalString+="/";
     document.getElementById("display").innerHTML = displayString;
 }
 function clickMult()
 {
-    displayString+="×";
+    displayString+=" × ";
     evalString+="*";
     document.getElementById("display").innerHTML = displayString;
 }
 function clickClear()
 {
     displayString="";
-    evalString+="";
+    evalString = "";
     document.getElementById("display").innerHTML = displayString;
 }
 function clickBackspace()
@@ -95,9 +102,20 @@ function clickEnter()
     if(displayString.charAt(displayString.length-1)=== "+" || displayString.charAt(displayString.length-1)=== "-" || displayString.charAt(displayString.length-1)=== "/" || displayString.charAt(displayString.length-1)=== "×" || displayString.charAt(displayString.length-1)=== "(" || displayString.charAt(displayString.length-1)=== ")")
     {
         displayString = "";
+        evalString = "";
         document.getElementById("display").innerHTML = "Error"
     }
+    history.push(displayString + (" = " + eval(evalString)));
+    localStorage.setItem("history", JSON.stringify(history));
     displayString = eval(evalString);
     document.getElementById("display").innerHTML = displayString;
 }
+function clickHistory()
+{
+    for()
+    {
+        //make for loop that adds an element to the dropdown for each thing in history
+    }
+}
+
 
