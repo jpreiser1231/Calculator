@@ -110,12 +110,16 @@ function clickEnter()
     displayString = eval(evalString);
     document.getElementById("display").innerHTML = displayString;
 }
+
 function clickHistory()
 {
-    for()
+    let htmlString = "";
+    for(let x = 0; x < JSON.parse(localStorage.getItem("history")).length; x++)
     {
+        htmlString += "<li onclick=''> " + JSON.parse(localStorage.getItem("history"))[x] + "</li>"
         //make for loop that adds an element to the dropdown for each thing in history
     }
+    document.getElementById("dropdown").innerHTML = htmlString;
 }
 
 
