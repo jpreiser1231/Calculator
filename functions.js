@@ -105,7 +105,9 @@ function clickExponent()
 }
 function clickSqrt()
 {
-    
+    displayString+=" √( "
+    evalString+="Math.sqrt("
+    document.getElementById("display").innerHTML = displayString
 }
 function clickClear()
 {
@@ -119,6 +121,7 @@ function clickBackspace()
     evalString = displayString.substring(0, displayString.length-1);
     document.getElementById("display").innerHTML = displayString;
 }
+//QUESTION: IS IT FINE IF YOU HAVE TO PUT MULTIPLCATION SYMBOL (ex. 5sqrt(4) OR CAN I HAVE IT SO ITS 5 * sqrt(4)
 function clickEnter()
 {
     if(displayString.charAt(displayString.length-1)=== "+" || displayString.charAt(displayString.length-1)=== "-" || displayString.charAt(displayString.length-1)=== "/" || displayString.charAt(displayString.length-1)=== "×" || displayString.charAt(displayString.length-1)=== "(" || displayString.charAt(displayString.length-1)=== ")")
@@ -149,5 +152,6 @@ function clickHistory()
     }
     document.getElementById("dropdown").innerHTML = htmlString;
 }
+
 
 
