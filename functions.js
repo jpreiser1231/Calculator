@@ -103,12 +103,18 @@ function clickEnter()
     {
         displayString = "";
         evalString = "";
-        document.getElementById("display").innerHTML = "Error"
+        document.getElementById("display").innerHTML = "Error";
     }
     history.push(displayString + (" = " + eval(evalString)));
     localStorage.setItem("history", JSON.stringify(history));
     displayString = eval(evalString);
     document.getElementById("display").innerHTML = displayString;
+}
+function getHistory(value)
+{
+    displayString = value.substring(0, value.indexOf("="));
+    evalString = value.substring(0, value.indexOf("=")-2);
+    document.getElementById("display").innerHTML = displayString
 }
 
 function clickHistory()
@@ -116,7 +122,7 @@ function clickHistory()
     let htmlString = "";
     for(let x = 0; x < JSON.parse(localStorage.getItem("history")).length; x++)
     {
-        htmlString += "<li onclick=''> " + JSON.parse(localStorage.getItem("history"))[x] + "</li>"
+        htmlString += "<li onclick='getHistory(\"" + (JSON.parse(localStorage.getItem("history")))[x]+ "\")'> " + JSON.parse(localStorage.getItem("history"))[x] + "</li>"
         //make for loop that adds an element to the dropdown for each thing in history
     }
     document.getElementById("dropdown").innerHTML = htmlString;
