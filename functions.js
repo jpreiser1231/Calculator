@@ -85,6 +85,28 @@ function clickMult()
     evalString+="*";
     document.getElementById("display").innerHTML = displayString;
 }
+function clickOpen()
+{
+    displayString+=" ( ";
+    evalString+="(";
+    document.getElementById("display").innerHTML = displayString;
+}
+function clickClose()
+{
+    displayString+=" ) ";
+    evalString+=")";
+    document.getElementById("display").innerHTML = displayString;
+}
+function clickExponent()
+{
+    displayString+=" ^ ";
+    evalString+="**";
+    document.getElementById("display").innerHTML = displayString;
+}
+function clickSqrt()
+{
+    
+}
 function clickClear()
 {
     displayString="";
