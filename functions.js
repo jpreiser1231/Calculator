@@ -133,13 +133,14 @@ function clickEnter()
     history.push(displayString + (" = " + eval(evalString)));
     localStorage.setItem("history", JSON.stringify(history));
     displayString = eval(evalString);
+    evalString = eval(evalString);
     document.getElementById("display").innerHTML = displayString;
 }
 function getHistory(value)
 {
-    displayString = value.substring(0, value.indexOf("="));
-    evalString = value.substring(0, value.indexOf("=")-2);
-    document.getElementById("display").innerHTML = displayString
+    displayString = value.substring(0, value.indexOf("=")-1);
+    evalString = value.substring(0, value.indexOf("=")-1);
+    document.getElementById("display").innerHTML = displayString;
 }
 
 function clickHistory()
